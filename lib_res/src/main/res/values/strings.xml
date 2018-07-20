@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Idea</string>
+
+    <string name="tab1">首页</string>
+    <string name="tab2">发现</string>
+    <string name="tab3">发布</string>
+    <string name="tab4">消息</string>
+    <string name="tab5">我</string>
+
+    <string name="splash_slogan">Go through the every bit of life</string>
+    <string name="splash_version">V 1.0.0</string>
+    <string name="splash_copyright">Copyright &#169; 2018 iDaily All Rights Reserved\nPowered by zhpan</string>
+</resources>

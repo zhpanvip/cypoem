@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Library</string>
+
+    <string name="label_ok">确定</string>
+    <string name="label_cancel">取消</string>
+    <string name="loading">Loading</string>
+    <!--网络请求-->
+    <string name="connect_error">网络连接失败,请检查网络</string>
+    <string name="connect_timeout">连接超时,请稍后再试</string>
+    <string name="bad_network">服务器异常</string>
+    <string name="parse_error">解析服务器响应数据失败</string>
+    <string name="unknown_error">未知错误</string>
+    <string name="response_return_error">服务器返回数据失败</string>
+
+
+    <!--权限管理-->
+    <string name="home_permission_camera">拍照权限已关闭，请在设置中开启</string>
+    <string name="home_permission_phone">手机权限已关闭，请在设置中开启</string>
+    <string name="home_permission_storage">文件读取权限已关闭，请在设置中开启</string>
+    <string name="home_permission_default">权限已关闭，请在设置中开启</string>
+</resources>
