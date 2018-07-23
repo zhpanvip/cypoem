@@ -1,4 +1,4 @@
-package com.zhpan.library.router;
+package com.zhpan.module_common.router;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 

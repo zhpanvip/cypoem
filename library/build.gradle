@@ -42,7 +42,6 @@ dependencies {
     api "com.android.support:support-v4:$rootProject.ext.supportLibVersion"
     api "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
     api "com.android.support:design:$rootProject.ext.supportLibVersion"
-    implementation project(':lib_res')
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
     api "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava2Version"
@@ -63,4 +62,6 @@ dependencies {
     api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-11'//没有使用特殊Header，可以不加这行
     api 'com.alibaba:arouter-api:1.3.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+//    implementation project(':module_common')
+    api project(':lib_res')
 }

@@ -4,6 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zhpan.module_home.HomeActivity">
+    tools:context="com.zhpan.module_main.MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="hahah"
+        android:textSize="@dimen/sp_16"
+        android:gravity="center"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zhpan.module_home">
+    package="com.zhpan.module_main">
 
     <!-- android:name属性——是用来设置所有activity属于哪个application的，默认是android.app.Application。 -->
     <application
         android:name="com.zhpan.library.base.BaseApp"
         android:allowBackup="true"
-        android:label="Home"
+        android:label="Main"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.zhpan.module_home.HomeActivity">
+        <activity android:name="com.zhpan.module_main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
