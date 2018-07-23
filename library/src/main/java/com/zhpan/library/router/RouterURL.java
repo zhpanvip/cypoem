@@ -5,5 +5,5 @@ package com.zhpan.library.router;
  * Describe:
  */
 public interface RouterURL {
-    String CUSTOM_VIEW_MAIN = "/custom/view/main";
+    String HOME = "/home/main";
 }

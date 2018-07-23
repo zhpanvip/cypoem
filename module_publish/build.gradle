@@ -1,11 +1,15 @@
-apply plugin: 'com.android.library'
-
+if (Boolean.valueOf(rootProject.ext.isApplication)) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
 android {
     compileSdkVersion 27
 
-
-
     defaultConfig {
+        if (rootProject.ext.isApplication) {
+            applicationId "com.zhpan.cypoem.publish"
+        }
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
@@ -22,12 +26,27 @@ android {
         }
     }
 
+    sourceSets {
+        main {
+            if (rootProject.ext.isApplication) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java {
+                    //排除java/debug文件夹下的所有文件
+                    exclude '*module'
+                }
+            }
+        }
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
