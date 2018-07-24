@@ -1,1 +1,1 @@
-include ':app', ':library', ':lib_res', ':module_home', ':module_find', ':module_publish', ':module_me', ':module_common', ':module_main', ':module_home'
+include ':app', ':library', ':lib_res', ':module_home', ':module_find', ':module_publish', ':module_me', ':module_common', ':module_home'
