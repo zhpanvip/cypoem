@@ -7,7 +7,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.zhpan.library.utils.ToastUtils;
 import com.zhpan.module_common.router.RouterURL;
 
-@Route(path = RouterURL.HOME)
+@Route(path = RouterURL.FRAGMENT_HOME)
 public class HomeActivity extends AppCompatActivity {
 
     @Override

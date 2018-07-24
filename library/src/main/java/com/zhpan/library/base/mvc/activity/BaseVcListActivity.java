@@ -1,5 +1,7 @@
 package com.zhpan.library.base.mvc.activity;
 
+import android.os.Bundle;
+
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -17,7 +19,7 @@ public abstract class BaseVcListActivity extends BaseVcActivity implements OnRef
     protected SmartRefreshLayout rlRefreshLayout;
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         if (rlRefreshLayout != null) {
             rlRefreshLayout.setOnRefreshListener(this);
             rlRefreshLayout.setOnLoadMoreListener(this);

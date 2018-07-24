@@ -5,6 +5,8 @@ package com.zhpan.module_common.router;
  * Describe:
  */
 public interface RouterURL {
-    String HOME = "/home/home";
-    String MAIN = "/main/main";
+    String FRAGMENT_FIND="/find/fragment/find";
+    String FRAGMENT_HOME="/home/fragment/home";
+    String FRAGMENT_PUBLISH="/publish/fragment/publish";
+    String FRAGMENT_ME="/me/fragment/me";
 }

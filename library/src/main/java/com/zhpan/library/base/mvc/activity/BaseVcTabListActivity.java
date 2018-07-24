@@ -1,5 +1,6 @@
 package com.zhpan.library.base.mvc.activity;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -60,7 +61,7 @@ public abstract class BaseVcTabListActivity extends BaseVcActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         mVpView.setAdapter(tabAdapter = new TabAdapter(getSupportFragmentManager()));
         mTlTabs.setTabMode(isTabScrollable() ? TabLayout.MODE_SCROLLABLE : TabLayout.MODE_FIXED);
         mTlTabs.setupWithViewPager(mVpView);

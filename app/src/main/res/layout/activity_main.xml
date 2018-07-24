@@ -1,33 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_home"
-        android:layout_width="343dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:onClick="onClick"
-        android:text="Go Home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.034" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_main"
-        android:layout_width="352dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:onClick="onClick"
-        android:text="Go To Main"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.213" />
+        <RadioGroup
+            android:id="@+id/rg_tab"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/tab_color"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
 
-</android.support.constraint.ConstraintLayout>
+            <RadioButton
+                android:id="@+id/rb_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/tab1_selector"
+                android:gravity="center_horizontal|bottom"
+                android:paddingBottom="5dp"
+                android:text="@string/tab1"
+                android:textColor="@drawable/text_color_selector" />
+
+            <RadioButton
+                android:id="@+id/rb_find"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/tab2_selector"
+                android:gravity="center_horizontal|bottom"
+                android:paddingBottom="5dp"
+                android:text="@string/tab2"
+                android:textColor="@drawable/text_color_selector" />
+
+            <RadioButton
+                android:id="@+id/rb_add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/tab3_selector"
+                android:gravity="center_horizontal|bottom"
+                android:paddingBottom="5dp"
+                android:text="@string/tab3"
+                android:textColor="@drawable/text_color_selector" />
+
+            <RadioButton
+                android:id="@+id/rb_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:button="@null"
+                android:visibility="gone"
+                android:drawableTop="@drawable/tab4_selector"
+                android:gravity="center_horizontal|bottom"
+                android:paddingBottom="5dp"
+                android:text="@string/tab4"
+                android:textColor="@drawable/text_color_selector" />
+
+            <RadioButton
+                android:id="@+id/rb_me"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/tab5_selector"
+                android:gravity="center_horizontal|bottom"
+                android:paddingBottom="5dp"
+                android:text="@string/tab5"
+                android:textColor="@drawable/text_color_selector" />
+        </RadioGroup>
+
+
+
+        <com.zhpan.module_common.custom_view.MViewPaper
+            android:id="@+id/vp_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/rg_tab" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/line_color"
+            android:layout_below="@id/vp_fragment"/>
+
+    </RelativeLayout>
+    <!--<ImageView
+        android:id="@+id/iv_add"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/add_bg"/>-->
+</FrameLayout>

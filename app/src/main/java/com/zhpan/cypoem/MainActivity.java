@@ -1,34 +1,154 @@
 package com.zhpan.cypoem;
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.zhpan.cypoem.adapter.AdapterFragmentPager;
+import com.zhpan.library.base.mvc.activity.BaseVcActivity;
 import com.zhpan.library.utils.AppUtils;
+import com.zhpan.library.utils.SharedPreferencesHelper;
 import com.zhpan.library.utils.ToastUtils;
+import com.zhpan.module_common.custom_view.MViewPaper;
 import com.zhpan.module_common.router.RouterURL;
 
-public class MainActivity extends AppCompatActivity {
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
+import butterknife.BindView;
+
+public class MainActivity extends BaseVcActivity {
+    @BindView(R.id.rb_home)
+    RadioButton mRbHome;
+    @BindView(R.id.rb_find)
+    RadioButton mRbFind;
+    @BindView(R.id.rb_add)
+    RadioButton mRbAdd;
+    @BindView(R.id.rb_message)
+    RadioButton mRbMessage;
+    @BindView(R.id.rb_me)
+    RadioButton mRbMe;
+    @BindView(R.id.rg_tab)
+    RadioGroup rgTab;
+    @BindView(R.id.vp_fragment)
+    MViewPaper mViewPager;
+    //  退出时间间隔
+    private long exitTime = 0;
+    //  上一次RadioGroup选中的Id
+    private int preCheckedId = R.id.rb_home;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        AppUtils.AppInfo appInfo = AppUtils.getAppInfo(this);
-        String packageName = appInfo.getPackageName();
-        ToastUtils.show(packageName);
+    protected void onResume() {
+        super.onResume();
+        SharedPreferencesHelper.put(this, "isFirstIn", true);
     }
 
-    public void onClick(View view){
-        switch (view.getId()){
-            case R.id.btn_main:
-//                RouterCenter.toMain();
-                ARouter.getInstance().build(RouterURL.MAIN).navigation();
-                break;
-            case R.id.btn_home:
-                ARouter.getInstance().build(RouterURL.HOME).navigation();
-                break;
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initTitle() {
+
+    }
+
+    @Override
+    protected void initView(Bundle savedInstanceState) {
+        EventBus.getDefault().register(this);
+        initData();
+        setListener();
+//        reStartActivity();
+    }
+
+    private void initData() {
+//        getToolbar().setVisibility(View.GONE);
+        AdapterFragmentPager mAdapter = new AdapterFragmentPager(getSupportFragmentManager());
+        mViewPager.setAdapter(mAdapter);
+    }
+
+    private void setListener() {
+        rgTab.setOnCheckedChangeListener((RadioGroup group, @IdRes int checkedId) -> {
+            switch (checkedId) {
+                case R.id.rb_home:
+                    mViewPager.setCurrentItem(AdapterFragmentPager.PAGE_HOME, false);
+                    break;
+                case R.id.rb_find:
+                    mViewPager.setCurrentItem(AdapterFragmentPager.PAGE_FIND, false);
+                    break;
+                case R.id.rb_add:
+                    mViewPager.setCurrentItem(AdapterFragmentPager.PAGE_PUBLISH, false);
+                    break;
+                case R.id.rb_message:
+                    if (messageClicked()) {
+                        return;
+                    }
+                    break;
+                case R.id.rb_me:
+                    if (meClicked()) {
+                        return;
+                    }
+                    break;
+            }
+            preCheckedId = checkedId;
+        });
+
+    }
+
+    private boolean meClicked() {
+        if (isLogin()) {
+            mViewPager.setCurrentItem(AdapterFragmentPager.PAGE_ME, false);
+            return false;
+        } else {
+            goToLogin();
+            rgTab.check(preCheckedId);
+            return true;
         }
     }
+
+    private boolean messageClicked() {
+        if (isLogin()) {
+            mViewPager.setCurrentItem(AdapterFragmentPager.PAGE_MESSAGE, false);
+            return false;
+        } else {
+            goToLogin();
+            rgTab.check(preCheckedId);
+            return true;
+        }
+    }
+
+    private void goToLogin() {
+//        LoginActivity.start(this);
+    }
+
+    public static void start(Context context) {
+        context.startActivity(new Intent(context, MainActivity.class));
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
+//                showToast("再按一次退出程序");
+                exitTime = System.currentTimeMillis();
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    private boolean isLogin() {
+        return true;
+//        return UserInfoTools.getIsLogin(this);
+    }
+
 }

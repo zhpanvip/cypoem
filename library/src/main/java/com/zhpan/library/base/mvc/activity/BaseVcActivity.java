@@ -42,13 +42,13 @@ public abstract class BaseVcActivity extends RxAppCompatActivity {
         unBinder = ButterKnife.bind(this);
         mDialogUtils = new DialogUtils(this);
         //加入activity管理
-        BaseApplication.getAppContext().getActivityControl().addActivity(this);
+//        BaseApplication.getAppContext().getActivityControl().addActivity(this);
         //沉浸式状态栏
         //setImmeriveStatuBar();
         mActivity = this;
 
         initTitle();
-        initView();
+        initView(savedInstanceState);
         if (regEvent) {
             EventBus.getDefault().register(this);
         }
@@ -131,7 +131,7 @@ public abstract class BaseVcActivity extends RxAppCompatActivity {
     /**
      * 初始化数据
      */
-    protected abstract void initView();
+    protected abstract void initView(Bundle savedInstanceState);
 
 
 }
