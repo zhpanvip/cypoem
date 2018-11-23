@@ -1,19 +1,20 @@
-if (Boolean.valueOf(rootProject.ext.isApplication)) {
+if (rootProject.ext.isApplication) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
 }
 android {
-    compileSdkVersion 27
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         if (rootProject.ext.isApplication) {
             applicationId "com.zhpan.cypoem.me"
         }
-        minSdkVersion 19
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [ moduleName : project.getName() ]
