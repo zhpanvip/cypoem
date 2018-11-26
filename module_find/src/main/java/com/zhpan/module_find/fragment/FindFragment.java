@@ -26,4 +26,8 @@ public class FindFragment extends BaseVcFragment {
     protected void initView(Bundle savedInstanceState) {
 
     }
+
+    public static FindFragment getInstance() {
+        return new FindFragment();
+    }
 }

@@ -26,4 +26,8 @@ public class MeFragment extends BaseVcFragment {
     protected void initView(Bundle savedInstanceState) {
 
     }
+
+    public static MeFragment getInstance(){
+        return new MeFragment();
+    }
 }

@@ -3,6 +3,13 @@
 
     <application>
         <activity android:name=".HomeActivity" />
+        <activity android:name="com.zhpan.module_home.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 

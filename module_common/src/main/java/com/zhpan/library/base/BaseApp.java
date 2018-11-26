@@ -1,8 +1,6 @@
 package com.zhpan.library.base;
 
 import android.app.Application;
-import android.content.Context;
-import android.content.res.Resources;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.zhpan.library.common.AppConfig;
@@ -10,8 +8,9 @@ import com.zhpan.library.utils.CrashUtils;
 import com.zhpan.library.utils.SPUtils;
 import com.zhpan.library.utils.Utils;
 
-public class BaseApp extends Application {
 
+public class BaseApp extends Application {
+    public static final String ROOT_PACKAGE = "com.zhpan";
     @Override
     public void onCreate() {
         super.onCreate();
@@ -23,9 +22,9 @@ public class BaseApp extends Application {
         LeakCanary.install(this);*/
         initRouter();
         SPUtils.init(this);
-        Utils.init(this);
+        Utils.init(this,true);
         CrashUtils.getInstance().init();
-//        LogUtils2.getBuilder().setTag("MyTag").setLog2FileSwitch(true).create();
+
     }
 
     private void initRouter() {

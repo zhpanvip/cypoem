@@ -26,4 +26,8 @@ public class PublishFragment extends BaseVcFragment {
     protected void initView(Bundle savedInstanceState) {
 
     }
+
+    public static PublishFragment getInstance() {
+        return new PublishFragment();
+    }
 }

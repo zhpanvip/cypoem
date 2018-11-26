@@ -1,5 +1,6 @@
-package com.zhpan.cypoem.adapter;
+package com.zhpan.module_home.adapter;
 
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -7,11 +8,8 @@ import android.util.SparseArray;
 import android.view.ViewGroup;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.zhpan.library.base.mvc.fragment.BaseVcFragment;
 import com.zhpan.library.router.RouterURL;
-import com.zhpan.module_find.fragment.FindFragment;
-import com.zhpan.module_home.fragment.HomeFragment;
-import com.zhpan.module_me.fragment.MeFragment;
-import com.zhpan.module_publish.fragment.PublishFragment;
 
 import java.util.List;
 
@@ -23,7 +21,9 @@ import java.util.List;
  */
 public class AdapterFragmentPager extends FragmentPagerAdapter {
 
-    /** 首页 */
+    /**
+     * 首页
+     */
     public static final int PAGE_HOME = 0;
 
     /**
@@ -50,29 +50,38 @@ public class AdapterFragmentPager extends FragmentPagerAdapter {
     /**
      * 切换Fragment页面集合
      */
-    private SparseArray<Fragment> fragmentList = new SparseArray<>();
+    private SparseArray<BaseVcFragment> fragmentList;
 
 
     public AdapterFragmentPager(FragmentManager fm) {
         super(fm);
-        FindFragment findFragment = (FindFragment)ARouter.getInstance().build(RouterURL.FRAGMENT_FIND).navigation();
-        HomeFragment homeFragment = (HomeFragment)ARouter.getInstance().build(RouterURL.FRAGMENT_HOME).navigation();
-        PublishFragment publishFragment = (PublishFragment)ARouter.getInstance().build(RouterURL.FRAGMENT_PUBLISH).navigation();
-        MeFragment meFragment = (MeFragment)ARouter.getInstance().build(RouterURL.FRAGMENT_ME).navigation();
-        fragmentList.put(PAGE_HOME,homeFragment );
-        fragmentList.put(PAGE_FIND,findFragment );
+        fragmentList = getFragments();
+
+//        fragmentList = ViewManager.getInstance().getAllFragment();
+    }
+
+    private SparseArray<BaseVcFragment> getFragments() {
+        fragmentList=new SparseArray<>();
+        BaseVcFragment findFragment = (BaseVcFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_FIND).navigation();
+        BaseVcFragment homeFragment = (BaseVcFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_HOME).navigation();
+        BaseVcFragment publishFragment = (BaseVcFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_PUBLISH).navigation();
+        BaseVcFragment meFragment = (BaseVcFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_ME).navigation();
+        fragmentList.put(PAGE_HOME, homeFragment);
+        fragmentList.put(PAGE_FIND, findFragment);
         fragmentList.put(PAGE_PUBLISH, publishFragment);
         fragmentList.put(PAGE_MESSAGE, meFragment);
+        return fragmentList;
     }
 
     public AdapterFragmentPager(FragmentManager fm, List<Fragment> fragments) {
         super(fm);
     }
 
+    @NonNull
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         Fragment fragment = (Fragment) super.instantiateItem(container, position);
-        fragmentList.put(position, fragment);
+        fragmentList.put(position, (BaseVcFragment) fragment);
         return fragment;
 
     }

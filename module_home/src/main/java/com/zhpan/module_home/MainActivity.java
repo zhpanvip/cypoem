@@ -1,42 +1,36 @@
-package com.zhpan.cypoem;
+package com.zhpan.module_home;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.IdRes;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.view.KeyEvent;
-import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.zhpan.cypoem.adapter.AdapterFragmentPager;
 import com.zhpan.library.base.mvc.activity.BaseVcActivity;
 import com.zhpan.library.custom_view.MViewPaper;
-import com.zhpan.library.utils.AppUtils;
 import com.zhpan.library.utils.SharedPreferencesHelper;
-import com.zhpan.library.utils.ToastUtils;
+import com.zhpan.module_home.adapter.AdapterFragmentPager;
 
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
 
 import butterknife.BindView;
 
 public class MainActivity extends BaseVcActivity {
-    @BindView(R.id.rb_home)
+    @BindView(R2.id.rb_home)
     RadioButton mRbHome;
-    @BindView(R.id.rb_find)
+    @BindView(R2.id.rb_find)
     RadioButton mRbFind;
-    @BindView(R.id.rb_add)
+    @BindView(R2.id.rb_add)
     RadioButton mRbAdd;
-    @BindView(R.id.rb_message)
+    @BindView(R2.id.rb_message)
     RadioButton mRbMessage;
-    @BindView(R.id.rb_me)
+    @BindView(R2.id.rb_me)
     RadioButton mRbMe;
-    @BindView(R.id.rg_tab)
+    @BindView(R2.id.rg_tab)
     RadioGroup rgTab;
-    @BindView(R.id.vp_fragment)
+    @BindView(R2.id.vp_fragment)
     MViewPaper mViewPager;
     //  退出时间间隔
     private long exitTime = 0;
@@ -74,29 +68,31 @@ public class MainActivity extends BaseVcActivity {
     }
 
     private void setListener() {
-        rgTab.setOnCheckedChangeListener((RadioGroup group, @IdRes int checkedId) -> {
-            switch (checkedId) {
-                case R.id.rb_home:
+        rgTab.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.rb_home) {
                     mViewPager.setCurrentItem(AdapterFragmentPager.PAGE_HOME, false);
-                    break;
-                case R.id.rb_find:
+
+                } else if (checkedId == R.id.rb_find) {
                     mViewPager.setCurrentItem(AdapterFragmentPager.PAGE_FIND, false);
-                    break;
-                case R.id.rb_add:
+
+                } else if (checkedId == R.id.rb_add) {
                     mViewPager.setCurrentItem(AdapterFragmentPager.PAGE_PUBLISH, false);
-                    break;
-                case R.id.rb_message:
+
+                } else if (checkedId == R.id.rb_message) {
                     if (messageClicked()) {
                         return;
                     }
-                    break;
-                case R.id.rb_me:
+
+                } else if (checkedId == R.id.rb_me) {
                     if (meClicked()) {
                         return;
                     }
-                    break;
+
+                }
+                preCheckedId = checkedId;
             }
-            preCheckedId = checkedId;
         });
 
     }
