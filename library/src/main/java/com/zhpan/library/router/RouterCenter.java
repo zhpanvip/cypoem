@@ -1,6 +1,4 @@
-package com.zhpan.module_common.router;
-
-import com.alibaba.android.arouter.launcher.ARouter;
+package com.zhpan.library.router;
 
 public class RouterCenter {
     /**

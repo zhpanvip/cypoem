@@ -4,8 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.zhpan.library.router.RouterURL;
 import com.zhpan.library.utils.ToastUtils;
-import com.zhpan.module_common.router.RouterURL;
 
 @Route(path = RouterURL.FRAGMENT_HOME)
 public class HomeActivity extends AppCompatActivity {

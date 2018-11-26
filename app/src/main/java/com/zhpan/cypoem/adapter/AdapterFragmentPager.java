@@ -7,7 +7,7 @@ import android.util.SparseArray;
 import android.view.ViewGroup;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.zhpan.module_common.router.RouterURL;
+import com.zhpan.library.router.RouterURL;
 import com.zhpan.module_find.fragment.FindFragment;
 import com.zhpan.module_home.fragment.HomeFragment;
 import com.zhpan.module_me.fragment.MeFragment;

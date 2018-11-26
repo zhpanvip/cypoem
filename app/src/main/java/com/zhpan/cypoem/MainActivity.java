@@ -13,11 +13,10 @@ import android.widget.RadioGroup;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.zhpan.cypoem.adapter.AdapterFragmentPager;
 import com.zhpan.library.base.mvc.activity.BaseVcActivity;
+import com.zhpan.library.custom_view.MViewPaper;
 import com.zhpan.library.utils.AppUtils;
 import com.zhpan.library.utils.SharedPreferencesHelper;
 import com.zhpan.library.utils.ToastUtils;
-import com.zhpan.module_common.custom_view.MViewPaper;
-import com.zhpan.module_common.router.RouterURL;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

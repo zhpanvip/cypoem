@@ -1,4 +1,4 @@
-package com.zhpan.module_common.router;
+package com.zhpan.library.router;
 
 /**
  * create by zhpan on 2018/7/12 14:11

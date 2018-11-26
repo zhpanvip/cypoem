@@ -1,4 +1,4 @@
-package com.zhpan.module_common.custom_view;
+package com.zhpan.library.custom_view;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatEditText;

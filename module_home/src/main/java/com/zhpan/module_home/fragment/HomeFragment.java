@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.zhpan.library.base.mvc.fragment.BaseVcFragment;
-import com.zhpan.module_common.router.RouterURL;
+import com.zhpan.library.router.RouterURL;
 import com.zhpan.module_home.R;
 
 /**

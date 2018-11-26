@@ -38,7 +38,7 @@ dependencies {
         implementation project(':module_me')
 //        implementation project(':module_main')
     } else {
-        implementation project(':module_common')
-//        api project(':library')
+//        implementation project(':module_common')
+        implementation project(':library')
     }
 }

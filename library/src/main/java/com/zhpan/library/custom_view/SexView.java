@@ -1,4 +1,4 @@
-package com.zhpan.module_common.custom_view;
+package com.zhpan.library.custom_view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.zhpan.module_common.R;
+import com.zhpan.library.R;
 
 
 /**
