@@ -56,12 +56,10 @@ public class AdapterFragmentPager extends FragmentPagerAdapter {
     public AdapterFragmentPager(FragmentManager fm) {
         super(fm);
         fragmentList = getFragments();
-
-//        fragmentList = ViewManager.getInstance().getAllFragment();
     }
 
     private SparseArray<BaseVcFragment> getFragments() {
-        fragmentList=new SparseArray<>();
+        SparseArray<BaseVcFragment> fragmentList = new SparseArray<>();
         BaseVcFragment findFragment = (BaseVcFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_FIND).navigation();
         BaseVcFragment homeFragment = (BaseVcFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_HOME).navigation();
         BaseVcFragment publishFragment = (BaseVcFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_PUBLISH).navigation();
@@ -83,7 +81,6 @@ public class AdapterFragmentPager extends FragmentPagerAdapter {
         Fragment fragment = (Fragment) super.instantiateItem(container, position);
         fragmentList.put(position, (BaseVcFragment) fragment);
         return fragment;
-
     }
 
     @Override
