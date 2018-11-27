@@ -1,4 +1,4 @@
-package com.zhpan.module_home.adapter;
+package com.zhpan.module_main.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;

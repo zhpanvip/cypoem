@@ -3,6 +3,7 @@ if (Boolean.valueOf(rootProject.ext.isApplication)) {
 } else {
     apply plugin: 'com.android.library'
 }
+apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -58,4 +59,5 @@ dependencies {
     api 'com.alibaba:arouter-api:1.3.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     implementation project(':module_common')
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
 }

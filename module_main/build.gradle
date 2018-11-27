@@ -3,7 +3,7 @@ if (Boolean.valueOf(rootProject.ext.isApplication)) {
 } else {
     apply plugin: 'com.android.library'
 }
-//apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         if (rootProject.ext.isApplication) {
-            applicationId "com.zhpan.cypoem.home"
+            applicationId "com.zhpan.cypoem.main"
         }
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -60,5 +60,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     api project(':module_common')
-//    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
 }

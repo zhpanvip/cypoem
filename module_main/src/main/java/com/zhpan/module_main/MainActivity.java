@@ -1,9 +1,8 @@
-package com.zhpan.module_home;
+package com.zhpan.module_main;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.view.KeyEvent;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -11,7 +10,7 @@ import android.widget.RadioGroup;
 import com.zhpan.library.base.mvc.activity.BaseVcActivity;
 import com.zhpan.library.custom_view.MViewPaper;
 import com.zhpan.library.utils.SharedPreferencesHelper;
-import com.zhpan.module_home.adapter.AdapterFragmentPager;
+import com.zhpan.module_main.adapter.AdapterFragmentPager;
 
 import org.greenrobot.eventbus.EventBus;
 
