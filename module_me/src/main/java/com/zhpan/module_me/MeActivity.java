@@ -1,6 +1,6 @@
 package com.zhpan.module_me;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MeActivity extends AppCompatActivity {

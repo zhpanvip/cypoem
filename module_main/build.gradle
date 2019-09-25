@@ -7,8 +7,6 @@ apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
-
     defaultConfig {
         if (rootProject.ext.isApplication) {
             applicationId "com.zhpan.cypoem.main"
@@ -23,7 +21,7 @@ android {
                 arguments = [ moduleName : project.getName() ]
             }
         }
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -53,11 +51,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.appcompatVersion"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     api project(':module_common')
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"

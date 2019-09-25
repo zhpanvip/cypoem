@@ -1,7 +1,9 @@
 package com.zhpan.library.base;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +16,7 @@ public abstract class BaseCoreFragment extends com.trello.rxlifecycle2.component
 
     @Nullable
     @Override
-    public final View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public final View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         this.inflater=inflater;
         if (rootView == null) {

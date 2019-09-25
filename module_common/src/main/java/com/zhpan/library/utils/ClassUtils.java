@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.support.annotation.Keep;
+import androidx.annotation.Keep;
 import android.util.Log;
 
 

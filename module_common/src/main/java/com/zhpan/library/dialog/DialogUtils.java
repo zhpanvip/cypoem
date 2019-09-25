@@ -1,8 +1,8 @@
 package com.zhpan.library.dialog;
 
 import android.app.Activity;
-import android.support.annotation.ColorInt;
-import android.support.annotation.LayoutRes;
+import androidx.annotation.ColorInt;
+import androidx.annotation.LayoutRes;
 import android.view.LayoutInflater;
 import android.view.View;
 

@@ -2,7 +2,7 @@ package com.zhpan.library.common;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.Keep;
+import androidx.annotation.Keep;
 import android.util.Log;
 import android.util.SparseArray;
 

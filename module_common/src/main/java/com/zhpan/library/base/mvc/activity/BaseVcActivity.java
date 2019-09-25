@@ -3,7 +3,7 @@ package com.zhpan.library.base.mvc.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;

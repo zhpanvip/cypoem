@@ -1,7 +1,7 @@
 package com.zhpan.library.utils;
 
-import android.support.annotation.ColorInt;
-import android.support.design.widget.Snackbar;
+import androidx.annotation.ColorInt;
+import com.google.android.material.snackbar.Snackbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;

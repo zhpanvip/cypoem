@@ -1,7 +1,7 @@
 package com.zhpan.library.net.common;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.kaopiz.kprogresshud.KProgressHUD;
 import com.zhpan.library.utils.helper.HUDFactory;

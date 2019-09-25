@@ -11,10 +11,10 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.5.0'
 //        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'me.tatarka:gradle-retrolambda:3.7.0'
-        classpath "com.jakewharton:butterknife-gradle-plugin:8.4.0"
+        classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.0'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -36,20 +36,19 @@ task clean(type: Delete) {
 }
 
 ext {
-    isApplication = true
+    isApplication = false
 
-    compileSdkVersion = 27
-    buildToolsVersion = "27.0.3"
+    compileSdkVersion = 28
     minSdkVersion = 19
-    targetSdkVersion = 27
+    targetSdkVersion = 28
     versionName = '1.0.0'
     versionCode = 1
-    supportLibVersion = '27.1.1'
+    appcompatVersion = "1.1.0"
 
-    butterknifeVersion = '8.4.0'
+    butterknifeVersion = '10.2.0'
     rxjava2Version = '2.0.8'
     retrofit2Version = '2.2.0'
-    rxlifecycle = '2.2.0'
+    rxlifecycle = '2.2.1'
     gsonVersion = '2.8.0'
     leakcanaryVersion = '1.5.4'
     eventbusVersion = '3.1.1'

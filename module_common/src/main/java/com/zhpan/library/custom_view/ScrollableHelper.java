@@ -2,8 +2,8 @@ package com.zhpan.library.custom_view;
 
 
 import android.annotation.SuppressLint;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;

@@ -2,8 +2,8 @@ package com.zhpan.library.base.mvp.activity;
 
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 
 import com.zhpan.library.R;
 import com.zhpan.library.base.mvp.inter.IPresenter;

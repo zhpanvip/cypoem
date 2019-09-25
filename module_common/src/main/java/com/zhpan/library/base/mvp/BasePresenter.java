@@ -1,7 +1,7 @@
 package com.zhpan.library.base.mvp;
 
 import android.content.Context;
-import android.support.annotation.CallSuper;
+import androidx.annotation.CallSuper;
 
 import com.zhpan.library.base.mvp.inter.IModel;
 import com.zhpan.library.base.mvp.inter.IView;
@@ -56,8 +56,6 @@ public abstract class BasePresenter<V extends IView, M extends IModel> {
 
     /**
      * 取消订阅关系
-     *
-     * @return
      */
     public void clearPool() {
         if (compositeDisposable != null) {
