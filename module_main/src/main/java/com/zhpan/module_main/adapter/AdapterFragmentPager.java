@@ -8,8 +8,8 @@ import android.util.SparseArray;
 import android.view.ViewGroup;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.zhpan.library.base.fragment.BaseFragment;
-import com.zhpan.library.router.RouterURL;
+import com.zhpan.library.fragment.BaseFragment;
+import com.zhpan.library.router.RoutingTable;
 
 import java.util.List;
 
@@ -60,10 +60,10 @@ public class AdapterFragmentPager extends FragmentPagerAdapter {
 
     private SparseArray<BaseFragment> getFragments() {
         SparseArray<BaseFragment> fragmentList = new SparseArray<>();
-        BaseFragment findFragment = (BaseFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_FIND).navigation();
-        BaseFragment homeFragment = (BaseFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_HOME).navigation();
-        BaseFragment publishFragment = (BaseFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_PUBLISH).navigation();
-        BaseFragment meFragment = (BaseFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_ME).navigation();
+        BaseFragment findFragment = (BaseFragment) ARouter.getInstance().build(RoutingTable.FRAGMENT_FIND).navigation();
+        BaseFragment homeFragment = (BaseFragment) ARouter.getInstance().build(RoutingTable.FRAGMENT_HOME).navigation();
+        BaseFragment publishFragment = (BaseFragment) ARouter.getInstance().build(RoutingTable.FRAGMENT_PUBLISH).navigation();
+        BaseFragment meFragment = (BaseFragment) ARouter.getInstance().build(RoutingTable.FRAGMENT_ME).navigation();
         fragmentList.put(PAGE_HOME, homeFragment);
         fragmentList.put(PAGE_FIND, findFragment);
         fragmentList.put(PAGE_PUBLISH, publishFragment);

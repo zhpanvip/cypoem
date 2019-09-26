@@ -1,2 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zhpan.module_find" />
+    package="com.zhpan.module_find">
+
+    <application>
+        <activity android:name="com.zhpan.module_find.FindActivity" />
+    </application>
+
+</manifest>

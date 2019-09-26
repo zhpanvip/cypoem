@@ -4,9 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.zhpan.library.router.RouterURL;
+import com.zhpan.library.router.RoutingTable;
 
-@Route(path = RouterURL.FRAGMENT_HOME)
+@Route(path = RoutingTable.FRAGMENT_HOME)
 public class HomeActivity extends AppCompatActivity {
 
     @Override

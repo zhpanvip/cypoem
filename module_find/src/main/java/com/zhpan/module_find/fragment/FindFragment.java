@@ -3,14 +3,14 @@ package com.zhpan.module_find.fragment;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.zhpan.library.base.fragment.BaseFragment;
-import com.zhpan.library.router.RouterURL;
+import com.zhpan.library.fragment.BaseFragment;
+import com.zhpan.library.router.RoutingTable;
 import com.zhpan.module_find.R;
 
 /**
  * Created by zhpan on 2018/7/24.
  */
-@Route(path = RouterURL.FRAGMENT_FIND)
+@Route(path = RoutingTable.FRAGMENT_FIND)
 public class FindFragment extends BaseFragment {
     @Override
     protected int getLayout() {

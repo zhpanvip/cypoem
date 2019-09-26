@@ -1,11 +1,13 @@
 package com.zhpan.library.router;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 public class RouterCenter {
     /**
-     * 测试首页
+     * 跳转发现页
      */
-    public static void toMain() {
-//        ARouter.getInstance().build(RouterURL.HOME).navigation();
+    public static void toFindActivity() {
+        ARouter.getInstance().build(RoutingTable.ACTIVITY_FIND).navigation();
     }
 
     /**

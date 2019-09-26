@@ -3,7 +3,7 @@
     package="com.zhpan.module_me">
 
     <application>
-        <activity android:name=".MeActivity"></activity>
+        <activity android:name=".MeActivity"/>
     </application>
 
 </manifest>
