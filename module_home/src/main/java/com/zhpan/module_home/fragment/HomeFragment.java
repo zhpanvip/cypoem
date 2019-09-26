@@ -1,22 +1,21 @@
 package com.zhpan.module_home.fragment;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.zhpan.library.R2;
 import com.zhpan.library.fragment.BaseFragment;
 import com.zhpan.library.router.RouterCenter;
 import com.zhpan.library.router.RoutingTable;
 import com.zhpan.module_home.R;
-
 
 /**
  * Created by zhpan on 2018/7/24.
  */
 @Route(path = RoutingTable.FRAGMENT_HOME)
 public class HomeFragment extends BaseFragment {
-    //    @BindView(R2.id.tv_fragment)
+//    @BindView(R2.id.tv_fragment)
     TextView mTextView;
 
     @Override
@@ -32,12 +31,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected void initView(Bundle savedInstanceState) {
         mTextView = mView.findViewById(R.id.tv_fragment);
-        mTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                RouterCenter.toFindActivity();
-            }
-        });
+        mTextView.setOnClickListener(v -> RouterCenter.toFindActivity());
 
     }
 

@@ -12,11 +12,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.0'
-//        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'me.tatarka:gradle-retrolambda:3.7.0'
         classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.0'
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 
@@ -45,6 +42,7 @@ ext {
     versionCode = 1
     appcompatVersion = "1.1.0"
 
+    butterknifeCompiler = "10.2.0"
     butterknifeVersion = '10.2.0'
     butterknife_compiler = "10.2.0"
     rxjava2Version = '2.0.8'
