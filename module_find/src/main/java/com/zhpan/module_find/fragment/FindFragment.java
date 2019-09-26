@@ -3,7 +3,7 @@ package com.zhpan.module_find.fragment;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.zhpan.library.base.mvc.fragment.BaseVcFragment;
+import com.zhpan.library.base.fragment.BaseFragment;
 import com.zhpan.library.router.RouterURL;
 import com.zhpan.module_find.R;
 
@@ -11,7 +11,7 @@ import com.zhpan.module_find.R;
  * Created by zhpan on 2018/7/24.
  */
 @Route(path = RouterURL.FRAGMENT_FIND)
-public class FindFragment extends BaseVcFragment {
+public class FindFragment extends BaseFragment {
     @Override
     protected int getLayout() {
         return R.layout.fragment_find;

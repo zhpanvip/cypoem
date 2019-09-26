@@ -4,18 +4,16 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.zhpan.library.R2;
-import com.zhpan.library.base.mvc.fragment.BaseVcFragment;
+import com.zhpan.library.base.fragment.BaseFragment;
 import com.zhpan.library.router.RouterURL;
 import com.zhpan.module_home.R;
 
-import butterknife.BindView;
 
 /**
  * Created by zhpan on 2018/7/24.
  */
 @Route(path = RouterURL.FRAGMENT_HOME)
-public class HomeFragment extends BaseVcFragment {
+public class HomeFragment extends BaseFragment {
 //    @BindView(R2.id.tv_fragment)
     TextView mTextView;
     @Override

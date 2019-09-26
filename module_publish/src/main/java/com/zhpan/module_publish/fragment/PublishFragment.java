@@ -3,7 +3,7 @@ package com.zhpan.module_publish.fragment;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.zhpan.library.base.mvc.fragment.BaseVcFragment;
+import com.zhpan.library.base.fragment.BaseFragment;
 import com.zhpan.library.router.RouterURL;
 import com.zhpan.module_publish.R;
 
@@ -11,7 +11,7 @@ import com.zhpan.module_publish.R;
  * Created by zhpan on 2018/7/24.
  */
 @Route(path = RouterURL.FRAGMENT_PUBLISH)
-public class PublishFragment extends BaseVcFragment {
+public class PublishFragment extends BaseFragment {
     @Override
     protected int getLayout() {
         return R.layout.fragment_publish;

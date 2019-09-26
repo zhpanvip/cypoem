@@ -8,7 +8,7 @@ import android.util.SparseArray;
 import android.view.ViewGroup;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.zhpan.library.base.mvc.fragment.BaseVcFragment;
+import com.zhpan.library.base.fragment.BaseFragment;
 import com.zhpan.library.router.RouterURL;
 
 import java.util.List;
@@ -50,7 +50,7 @@ public class AdapterFragmentPager extends FragmentPagerAdapter {
     /**
      * 切换Fragment页面集合
      */
-    private SparseArray<BaseVcFragment> fragmentList;
+    private SparseArray<BaseFragment> fragmentList;
 
 
     public AdapterFragmentPager(FragmentManager fm) {
@@ -58,12 +58,12 @@ public class AdapterFragmentPager extends FragmentPagerAdapter {
         fragmentList = getFragments();
     }
 
-    private SparseArray<BaseVcFragment> getFragments() {
-        SparseArray<BaseVcFragment> fragmentList = new SparseArray<>();
-        BaseVcFragment findFragment = (BaseVcFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_FIND).navigation();
-        BaseVcFragment homeFragment = (BaseVcFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_HOME).navigation();
-        BaseVcFragment publishFragment = (BaseVcFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_PUBLISH).navigation();
-        BaseVcFragment meFragment = (BaseVcFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_ME).navigation();
+    private SparseArray<BaseFragment> getFragments() {
+        SparseArray<BaseFragment> fragmentList = new SparseArray<>();
+        BaseFragment findFragment = (BaseFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_FIND).navigation();
+        BaseFragment homeFragment = (BaseFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_HOME).navigation();
+        BaseFragment publishFragment = (BaseFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_PUBLISH).navigation();
+        BaseFragment meFragment = (BaseFragment) ARouter.getInstance().build(RouterURL.FRAGMENT_ME).navigation();
         fragmentList.put(PAGE_HOME, homeFragment);
         fragmentList.put(PAGE_FIND, findFragment);
         fragmentList.put(PAGE_PUBLISH, publishFragment);
@@ -77,9 +77,9 @@ public class AdapterFragmentPager extends FragmentPagerAdapter {
 
     @NonNull
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(@NonNull ViewGroup container, int position) {
         Fragment fragment = (Fragment) super.instantiateItem(container, position);
-        fragmentList.put(position, (BaseVcFragment) fragment);
+        fragmentList.put(position, (BaseFragment) fragment);
         return fragment;
     }
 

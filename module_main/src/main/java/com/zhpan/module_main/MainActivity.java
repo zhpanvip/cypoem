@@ -7,30 +7,27 @@ import android.view.KeyEvent;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.zhpan.library.base.mvc.activity.BaseVcActivity;
-import com.zhpan.library.custom_view.MViewPaper;
-import com.zhpan.library.utils.SharedPreferencesHelper;
+import androidx.viewpager.widget.ViewPager;
+
+import com.zhpan.library.base.activity.BaseActivity;
 import com.zhpan.module_main.adapter.AdapterFragmentPager;
 
-import org.greenrobot.eventbus.EventBus;
 
-import butterknife.BindView;
-
-public class MainActivity extends BaseVcActivity {
-    @BindView(R2.id.rb_home)
+public class MainActivity extends BaseActivity {
+    //    @BindView(R2.id.rb_home)
     RadioButton mRbHome;
-    @BindView(R2.id.rb_find)
+    //    @BindView(R2.id.rb_find)
     RadioButton mRbFind;
-    @BindView(R2.id.rb_add)
+    //    @BindView(R2.id.rb_add)
     RadioButton mRbAdd;
-    @BindView(R2.id.rb_message)
+    //    @BindView(R2.id.rb_message)
     RadioButton mRbMessage;
-    @BindView(R2.id.rb_me)
+    //    @BindView(R2.id.rb_me)
     RadioButton mRbMe;
-    @BindView(R2.id.rg_tab)
+    //    @BindView(R2.id.rg_tab)
     RadioGroup rgTab;
-    @BindView(R2.id.vp_fragment)
-    MViewPaper mViewPager;
+    //    @BindView(R2.id.vp_fragment)
+    ViewPager mViewPager;
     //  退出时间间隔
     private long exitTime = 0;
     //  上一次RadioGroup选中的Id
@@ -39,7 +36,7 @@ public class MainActivity extends BaseVcActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        SharedPreferencesHelper.put(this, "isFirstIn", true);
+//        SharedPreferencesHelper.put(this, "isFirstIn", true);
     }
 
     @Override
@@ -54,14 +51,18 @@ public class MainActivity extends BaseVcActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        EventBus.getDefault().register(this);
+        mRbHome = findViewById(R.id.rb_home);
+        mRbFind = findViewById(R.id.rb_find);
+        mRbAdd = findViewById(R.id.rb_add);
+        mRbMessage = findViewById(R.id.rb_message);
+        mRbMe = findViewById(R.id.rb_me);
+        mViewPager = findViewById(R.id.vp_fragment);
+        rgTab = findViewById(R.id.rg_tab);
         initData();
         setListener();
-//        reStartActivity();
     }
 
     private void initData() {
-//        getToolbar().setVisibility(View.GONE);
         AdapterFragmentPager mAdapter = new AdapterFragmentPager(getSupportFragmentManager());
         mViewPager.setAdapter(mAdapter);
     }

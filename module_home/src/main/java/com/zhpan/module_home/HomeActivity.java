@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.zhpan.library.router.RouterURL;
-import com.zhpan.library.utils.ToastUtils;
 
 @Route(path = RouterURL.FRAGMENT_HOME)
 public class HomeActivity extends AppCompatActivity {
@@ -14,7 +13,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        ToastUtils.show("this is home");
+//        ToastUtils.show("this is home");
 //        ARouter.getInstance().inject(this);
     }
 }
