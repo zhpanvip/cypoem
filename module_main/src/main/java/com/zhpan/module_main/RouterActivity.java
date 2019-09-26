@@ -6,7 +6,7 @@ import android.os.Bundle;
 //import com.zhpan.library.utils.ToastUtils;
 
 
-public class LauncherActivity extends AppCompatActivity {
+public class RouterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

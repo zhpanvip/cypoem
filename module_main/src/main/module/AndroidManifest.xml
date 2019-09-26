@@ -8,13 +8,14 @@
         android:label="Main"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.zhpan.module_main.LauncherActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+     <activity android:name="com.zhpan.module_main.MainActivity">
+         <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+             <category android:name="android.intent.category.LAUNCHER" />
+         </intent-filter>
+     </activity>
+     <activity android:name="com.zhpan.module_main.RouterActivity"/>
 
     </application>
 
