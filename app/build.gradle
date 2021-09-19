@@ -31,7 +31,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeCompiler"
-    if (!rootProject.ext.isApplication) {
+    if (rootProject.ext.isBundleMode) {
         implementation project(':module_home')
         implementation project(':module_publish')
         implementation project(':module_find')
