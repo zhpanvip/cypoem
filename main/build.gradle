@@ -60,6 +60,6 @@ dependencies {
   androidTestImplementation 'androidx.test:runner:1.2.0'
   androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
   annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
-  api project(':module_common')
+  api project(':common')
   annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeCompiler"
 }
