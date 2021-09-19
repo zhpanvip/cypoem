@@ -1,4 +1,4 @@
-package com.zhpan.library;
+package com.zhpan.library.router;
 
 import android.text.TextUtils;
 import com.alibaba.android.arouter.facade.template.IProvider;

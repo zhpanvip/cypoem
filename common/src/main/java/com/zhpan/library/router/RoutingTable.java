@@ -5,9 +5,10 @@ package com.zhpan.library.router;
  * Describe:
  */
 public class RoutingTable {
-    public static final String FRAGMENT_FIND = "/find/fragment/find";
-    public static final String FRAGMENT_HOME = "/home/fragment/home";
-    public static final String FRAGMENT_PUBLISH = "/publish/fragment/publish";
-    public static final String FRAGMENT_ME = "/me/fragment/me";
-    public static final String ACTIVITY_FIND = "/find/activity/find";
+  public static final String FRAGMENT_FIND = "/find/fragment/find";
+  public static final String FRAGMENT_HOME = "/home/fragment/home";
+  public static final String FRAGMENT_PUBLISH = "/publish/fragment/publish";
+  public static final String FRAGMENT_ME = "/me/fragment/me";
+  public static final String ACTIVITY_FIND = "/find/activity/find";
+  public static final String USER_DATA = "/me/userdata";
 }

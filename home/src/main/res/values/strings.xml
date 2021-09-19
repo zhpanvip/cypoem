@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">module_home</string>
-    <string name="to_find_activity">跳转发现页</string>
+  <string name="app_name">module_home</string>
+  <string name="to_find_activity">跳转发现页</string>
+  <string name="user_info">ARouter：username = %1$s,userAge = %2$d</string>
 </resources>
